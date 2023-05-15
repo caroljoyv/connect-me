@@ -3,6 +3,10 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.get("/")           # path operation
+def root():
+    return {"message": "Welcome to my api peeps!"}
+
+@app.get("/posts")
+def get_post():
+    return {"data":"This is your post"}
