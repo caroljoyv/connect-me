@@ -7,6 +7,7 @@ app = FastAPI()
 class Post(BaseModel):
     title : str
     content : str
+    published : bool = True
 
 
 @app.get("/")           # path operation
@@ -21,4 +22,5 @@ def get_post():
 def create_post(new_post: Post):
     print(new_post)
     print(new_post.title)
+    print(new_post.published)
     return {"data":"new_post recieved"}
